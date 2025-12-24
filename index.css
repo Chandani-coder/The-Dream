@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 240 20% 3%;
+    --foreground: 220 20% 90%;
+
+    --card: 240 20% 6%;
+    --card-foreground: 220 20% 90%;
+
+    --popover: 240 20% 6%;
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 200 80% 70%;
+    --primary-foreground: 240 20% 3%;
+
+    --secondary: 280 60% 60%;
+    --secondary-foreground: 220 20% 95%;
+
+    --muted: 240 15% 15%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 320 70% 65%;
+    --accent-foreground: 220 20% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 200 80% 70%;
+
+    --radius: 0.5rem;
+
+    /* Custom dream colors */
+    --glow-girl: 190 90% 70%;
+    --glow-stranger: 320 80% 60%;
+    --star: 220 30% 80%;
+    --space-deep: 250 30% 5%;
+    --space-mid: 240 25% 8%;
+    --nebula: 280 40% 15%;
+  }
+
+  .dark {
+    --background: 240 20% 3%;
+    --foreground: 220 20% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+  }
+}
+
+/* Keyframes for dreamy animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: blur(25px);
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 60px 30px hsl(var(--glow-girl) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 80px 40px hsl(var(--glow-girl) / 0.5);
+  }
+}
+
+@keyframes sit-up {
+  0% {
+    transform: rotate(-10deg) translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(-20px);
+  }
+}
+
+@keyframes lie-down {
+  0% {
+    transform: rotate(0deg) translateY(-20px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(0);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes stranger-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes stranger-dance {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes text-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-star-twinkle {
+  animation: star-twinkle 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-sit-up {
+  animation: sit-up 2s ease-out forwards;
+}
+
+.animate-lie-down {
+  animation: lie-down 2s ease-out forwards;
+}
+
+.animate-flicker {
+  animation: flicker 0.5s ease-in-out 3;
+}
+
+.animate-stranger-appear {
+  animation: stranger-appear 3s ease-out forwards;
+}
+
+.animate-stranger-dance {
+  animation: stranger-dance 4s ease-in-out infinite;
+}
+
+.animate-fade-out {
+  animation: fade-out 3s ease-out forwards;
+}
+
+.animate-text-appear {
+  animation: text-appear 1s ease-out forwards;
+}
+
+/* Star drift animation */
+.star {
+  animation: drift linear infinite;
+}
